@@ -1,0 +1,50 @@
+\section{Introduction}
+\label{sec:intro}
+
+Deepfake technology uses deep generative models to synthesise or manipulate
+facial images and videos, posing serious challenges for digital trust and
+media authenticity~\cite{goodfellow2014gan}.
+Early GAN-based deepfakes were easily identifiable, but style-based
+architectures such as StyleGAN2~\cite{karras2020stylegan2} now produce
+synthetic faces that are perceptually indistinguishable from real photographs.
+
+Two broad detection families have emerged.
+\emph{Spatial-domain} methods apply CNNs directly to pixel-space images,
+exploiting texture and structural inconsistencies introduced during
+synthesis~\cite{rossler2019faceforensics}.
+\emph{Frequency-domain} methods analyse the Fourier or DCT spectrum,
+motivated by the observation that transposed-convolution upsampling layers
+leave periodic spectral artefacts absent from natural
+photographs~\cite{frank2020frequency,dzanic2020fourier,durall2019unmasking}.
+
+This project sits at the intersection of both families.
+The central hypothesis is:
+\begin{quote}
+\emph{A dual-branch model that jointly processes spatial (RGB) and spectral
+(FFT) features outperforms either modality alone on StyleGAN2 face
+detection.}
+\end{quote}
+
+Three experiments test this hypothesis:
+\begin{enumerate}
+  \item \textbf{RGB} — ResNet18~\cite{he2016resnet} fine-tuned from
+    ImageNet on raw $224\!\times\!224$ face images.
+  \item \textbf{FFT} — identical ResNet18 trained from scratch on
+    per-channel log-magnitude FFT spectra.
+  \item \textbf{Hybrid} — dual-branch architecture that late-fuses 512-d
+    features from both branches through a two-layer classification head.
+\end{enumerate}
+
+All models are augmented with Grad-CAM~\cite{selvaraju2017gradcam}
+visualisations for post-hoc explainability.
+
+\noindent\textbf{Contributions:}
+\begin{itemize}
+  \item A clean, reproducible three-way comparison of RGB, FFT, and Hybrid
+    deepfake detectors under identical training conditions.
+  \item Empirical evidence that frequency cues alone are insufficient for
+    StyleGAN2 detection at the scale studied, yet add measurable value in a
+    late-fusion architecture (perfect recall).
+  \item Per-model Grad-CAM visualisations that confirm semantically
+    meaningful spatial attention.
+\end{itemize}

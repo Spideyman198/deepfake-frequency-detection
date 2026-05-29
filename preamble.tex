@@ -1,0 +1,22 @@
+%
+% preamble.tex  —  loaded before hyperref in main.tex
+% Add extra packages and commands here.
+%
+% NOTE: cvpr.sty already loads:
+%   times, xspace, xcolor, graphicx, amsmath, amssymb,
+%   booktabs, natbib, caption, subcaption, url
+%
+
+% ── Extra packages ────────────────────────────────────────────────────────────
+\usepackage{array}        % enhanced column specs in tabular
+\usepackage{multirow}     % \multirow in tables
+\usepackage{tabularx}     % auto-width columns
+\usepackage{float}        % [H] placement (use sparingly in two-column)
+
+% ── Inline annotation helpers (disable for final) ────────────────────────────
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\todo}[1]{{\color{red}#1}}
+\newcommand{\TODO}[1]{\textbf{\color{red}[TODO: #1]}}
+% Disable by uncommenting:
+% \renewcommand{\TODO}[1]{}
+% \renewcommand{\todo}[1]{#1}

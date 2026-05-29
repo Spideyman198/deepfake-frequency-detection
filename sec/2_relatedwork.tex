@@ -1,0 +1,33 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Spatial-domain detection.}
+FaceForensics++~\cite{rossler2019faceforensics} established the first
+large-scale benchmark for face manipulation detection, showing that an
+XceptionNet fine-tuned on RGB frames achieves strong accuracy across five
+manipulation types.
+The success of ImageNet-pretrained CNNs on deepfake detection has since been
+replicated across many architectures, suggesting that low-level texture
+statistics from natural images transfer well to identifying synthetic
+artefacts.
+
+\paragraph{Frequency-domain analysis.}
+Durall \etal~\cite{durall2019unmasking} showed that GAN images exhibit
+systematically elevated high-frequency energy.
+A simple classifier on the 1D azimuthal power spectrum separates real from
+GAN-generated faces with reasonable accuracy.
+Frank \etal~\cite{frank2020frequency} extended this with 2D DCT features,
+achieving $>90\%$ detection rates for several GAN types, while also
+documenting that frequency-based detectors degrade under JPEG compression.
+Dzanic \etal~\cite{dzanic2020fourier} provided the theoretical basis:
+the periodic ``checkerboard'' pattern in frequency space arises from uneven
+kernel overlap in transposed-convolution upsampling layers.
+
+\paragraph{Explainability.}
+CAM~\cite{zhou2016cam} and Grad-CAM~\cite{selvaraju2017gradcam} are now
+standard tools for interpreting CNN decisions.
+In deepfake detection, heatmaps have consistently shown that
+well-performing models attend to periocular and mouth regions — areas where
+GAN synthesis tends to concentrate synthesis errors.
+We apply Grad-CAM to validate that our models are not relying on spurious
+background cues.

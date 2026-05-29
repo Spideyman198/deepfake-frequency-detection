@@ -1,0 +1,133 @@
+% main.bib — Bibliography for:
+% "Deepfake Image Detection Using Frequency-Domain Analysis and Explainable AI"
+% Kenan Eliyan, Bahcesehir University AI Engineering, 2026
+
+% ── Journal / Conference string macros (keep these — used by ieeenat_fullname) ──
+@String(PAMI  = {IEEE Trans. Pattern Anal. Mach. Intell.})
+@String(IJCV  = {Int. J. Comput. Vis.})
+@String(CVPR  = {IEEE Conf. Comput. Vis. Pattern Recog.})
+@String(ICCV  = {Int. Conf. Comput. Vis.})
+@String(ECCV  = {Eur. Conf. Comput. Vis.})
+@String(NIPS  = {Adv. Neural Inform. Process. Syst.})
+@String(ICPR  = {Int. Conf. Pattern Recog.})
+@String(BMVC  = {Brit. Mach. Vis. Conf.})
+@String(TOG   = {ACM Trans. Graph.})
+@String(TIP   = {IEEE Trans. Image Process.})
+@String(TVCG  = {IEEE Trans. Vis. Comput. Graph.})
+@String(TMM   = {IEEE Trans. Multimedia})
+@String(ACMMM = {ACM Int. Conf. Multimedia})
+@String(ICME  = {Int. Conf. Multimedia and Expo})
+@String(ICASSP= {ICASSP})
+@String(ICIP  = {IEEE Int. Conf. Image Process.})
+@String(ACCV  = {ACCV})
+@String(ICLR  = {Int. Conf. Learn. Represent.})
+@String(IJCAI = {IJCAI})
+@String(PR    = {Pattern Recognition})
+@String(AAAI  = {AAAI})
+@String(CVPRW = {IEEE Conf. Comput. Vis. Pattern Recog. Worksh.})
+@String(CSVT  = {IEEE Trans. Circuit Syst. Video Technol.})
+@String(ICML  = {Int. Conf. Mach. Learn.})
+
+% ── References ────────────────────────────────────────────────────────────────
+
+@inproceedings{goodfellow2014gan,
+  author    = {Goodfellow, Ian J. and Pouget-Abadie, Jean and Mirza, Mehdi
+               and Xu, Bing and Warde-Farley, David and Ozair, Sherjil
+               and Courville, Aaron and Bengio, Yoshua},
+  title     = {Generative Adversarial Nets},
+  booktitle = NIPS,
+  volume    = {27},
+  pages     = {2672--2680},
+  year      = {2014}
+}
+
+@inproceedings{he2016resnet,
+  author    = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  title     = {Deep Residual Learning for Image Recognition},
+  booktitle = CVPR,
+  pages     = {770--778},
+  year      = {2016}
+}
+
+@inproceedings{kingma2015adam,
+  author    = {Kingma, Diederik P. and Ba, Jimmy},
+  title     = {Adam: A Method for Stochastic Optimization},
+  booktitle = ICLR,
+  year      = {2015}
+}
+
+@inproceedings{selvaraju2017gradcam,
+  author    = {Selvaraju, Ramprasaath R. and Cogswell, Michael
+               and Das, Abhishek and Vedantam, Ramakrishna
+               and Parikh, Devi and Batra, Dhruv},
+  title     = {{Grad-CAM}: Visual Explanations from Deep Networks via
+               Gradient-based Localization},
+  booktitle = ICCV,
+  pages     = {618--626},
+  year      = {2017}
+}
+
+@inproceedings{zhou2016cam,
+  author    = {Zhou, Bolei and Khosla, Aditya and Lapedriza, Agata
+               and Oliva, Aude and Torralba, Antonio},
+  title     = {Learning Deep Features for Discriminative Localization},
+  booktitle = CVPR,
+  pages     = {2921--2929},
+  year      = {2016}
+}
+
+@inproceedings{karras2020stylegan2,
+  author    = {Karras, Tero and Laine, Samuli and Aittala, Miika
+               and Hellsten, Janne and Lehtinen, Jaakko and Aila, Timo},
+  title     = {Analyzing and Improving the Image Quality of {StyleGAN}},
+  booktitle = CVPR,
+  pages     = {8110--8119},
+  year      = {2020}
+}
+
+@inproceedings{rossler2019faceforensics,
+  author    = {R{\"o}ssler, Andreas and Cozzolino, Davide
+               and Verdoliva, Luisa and Riess, Christian
+               and Thies, Justus and Nie{\ss}ner, Matthias},
+  title     = {{FaceForensics++}: Learning to Detect Manipulated Facial Images},
+  booktitle = ICCV,
+  pages     = {1--11},
+  year      = {2019}
+}
+
+@inproceedings{frank2020frequency,
+  author    = {Frank, Joel and Eisenhofer, Thorsten and Sch{\"o}nherr, Lea
+               and Fischer, Asja and Kolossa, Dorothea and Holz, Thorsten},
+  title     = {Leveraging Frequency Analysis for Deep Fake Image Recognition},
+  booktitle = ICML,
+  volume    = {119},
+  pages     = {3247--3258},
+  year      = {2020}
+}
+
+@inproceedings{dzanic2020fourier,
+  author    = {Dzanic, Tarik and Shah, Karan and Witherden, Freddie D.},
+  title     = {Fourier Spectrum Discrepancies in Deep Network Generated Images},
+  booktitle = NIPS,
+  volume    = {33},
+  pages     = {3022--3032},
+  year      = {2020}
+}
+
+@article{durall2019unmasking,
+  author  = {Durall, Ricard and Keuper, Margret and Pfreundt, Franz-Josef
+             and Keuper, Janis},
+  title   = {Unmasking {DeepFakes} with Simple Features},
+  journal = {arXiv preprint arXiv:1911.00686},
+  year    = {2019}
+}
+
+@misc{dataset140k,
+  author       = {Xhlulu},
+  title        = {140{K} Real and Fake Faces},
+  year         = {2020},
+  howpublished = {Kaggle dataset},
+  note         = {\url{https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces}.
+                  70{,}000 FFHQ/Flickr real faces and 70{,}000 StyleGAN2
+                  synthetic faces.}
+}

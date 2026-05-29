@@ -1,0 +1,44 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We designed and evaluated three CNN-based deepfake detectors on
+StyleGAN2-generated face images.
+Key findings:
+
+\begin{enumerate}
+  \item \textbf{FFT alone is insufficient.}  A ResNet18 on log-magnitude
+    spectra achieves only 61\% accuracy (AUC\,=\,0.641) — barely above
+    random — suggesting that StyleGAN2 spectral artefacts are not easily
+    exploitable by a standard CNN at the scale studied.
+
+  \item \textbf{RGB is a strong baseline.}  Fine-tuning a pretrained
+    ResNet18 on raw face images yields 99\% accuracy (AUC\,=\,0.9975) with
+    rapid convergence, confirming that ImageNet features transfer well to
+    deepfake detection.
+
+  \item \textbf{Hybrid outperforms both modalities.}  Late fusion achieves
+    99.5\% accuracy, AUC\,=\,0.9998, and \emph{perfect recall} — the
+    spectral branch resolves the residual ambiguous cases left by the
+    spatial model.
+
+  \item \textbf{Grad-CAM confirms interpretable attention.}  The RGB branch
+    focuses on face-internal regions associated with GAN synthesis errors,
+    providing evidence of genuine semantic learning.
+\end{enumerate}
+
+\paragraph{Limitations.}
+The evaluation is limited to StyleGAN2 faces under clean conditions.
+Frequency-based detectors are known to degrade under JPEG
+compression~\cite{frank2020frequency}, and cross-generator
+generalisation (to Stable Diffusion, FaceSwap, \etc) is untested.
+
+\paragraph{Future work.}
+Promising directions include: cross-generator robustness evaluation;
+cross-attention fusion to replace naive concatenation; temporal consistency
+modelling for video deepfake detection; and quantisation of the Hybrid model
+for real-time deployment.
+
+\paragraph{Acknowledgements.}
+Dataset by Xhlulu~\cite{dataset140k} (Kaggle).
+ImageNet weights via PyTorch \texttt{torchvision}.
+Experiments run on a single NVIDIA GPU (CUDA 11.8 / 12.1).

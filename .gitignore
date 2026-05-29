@@ -1,3 +1,17 @@
+# ── LaTeX build artefacts (from CVPR template) ───────────────────────────────
+*.aux
+*.bak
+*.bbl
+*.blg
+*.brf
+*.log
+*.out
+*.fls
+*.synctex.gz
+*.fdb_latexmk
+# *.pdf  — keep PDFs out of the diff but track poster/poster.pdf explicitly
+# Use "git add -f poster/poster.pdf" if needed
+
 # ── Dataset ───────────────────────────────────────────────────────────────────
 # 30 000 images, ~820 MB — download from Kaggle instead.
 # See README.md › "Getting the Data" for instructions.
@@ -28,7 +42,6 @@ __pycache__/
 # ── OS / editor clutter ───────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
-*.log
 *.tmp
 
 # ── Virtual environments ──────────────────────────────────────────────────────

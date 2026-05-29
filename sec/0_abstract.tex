@@ -1,0 +1,22 @@
+\begin{abstract}
+The proliferation of high-fidelity GAN-generated faces has made deepfake
+imagery increasingly difficult to detect visually.
+We investigate whether combining spatial (RGB) and spectral (FFT) cues in a
+unified deep neural network outperforms either modality alone.
+Three strategies are benchmarked under identical conditions:
+(\emph{i})~an RGB-only ResNet18 fine-tuned from ImageNet weights;
+(\emph{ii})~an FFT-only ResNet18 trained from scratch on log-magnitude
+frequency spectra;
+(\emph{iii})~a Hybrid dual-branch model that late-fuses features from both
+domains.
+All experiments use a balanced 30{,}000-image subset of the publicly
+available 140K Real and Fake Faces dataset (StyleGAN2 vs.\ FFHQ/Flickr).
+On a 4{,}500-image held-out test set, the Hybrid model achieves
+\textbf{99.5\% accuracy} and \textbf{AUC\,=\,0.9998}, surpassing the
+strong RGB baseline (99.0\%, AUC\,=\,0.9975) and the FFT-only model
+(61.0\%, AUC\,=\,0.6412).
+Crucially, the Hybrid attains perfect recall (zero false negatives).
+Gradient-weighted Class Activation Mapping (Grad-CAM) confirms that the RGB
+branch attends to semantically meaningful facial regions.
+Code, metrics, and figures are publicly available on GitHub.
+\end{abstract}

@@ -1,0 +1,139 @@
+% ============================================================
+%  Bibliography for:
+%  Deepfake Image Detection Using Frequency-Domain Analysis
+%  and Explainable AI
+%
+%  Bahcesehir University — AI Engineering — 2026
+%  Author: Kenan Eliyan
+% ============================================================
+
+% ── Foundational deep learning ───────────────────────────────────────────────
+
+@inproceedings{goodfellow2014gan,
+  author    = {Goodfellow, Ian J. and Pouget-Abadie, Jean and Mirza, Mehdi
+               and Xu, Bing and Warde-Farley, David and Ozair, Sherjil
+               and Courville, Aaron and Bengio, Yoshua},
+  title     = {Generative Adversarial Nets},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {27},
+  pages     = {2672--2680},
+  year      = {2014},
+  publisher = {Curran Associates, Inc.}
+}
+
+@inproceedings{he2016resnet,
+  author    = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+  title     = {Deep Residual Learning for Image Recognition},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision
+               and Pattern Recognition (CVPR)},
+  pages     = {770--778},
+  year      = {2016},
+  doi       = {10.1109/CVPR.2016.90}
+}
+
+@article{kingma2015adam,
+  author  = {Kingma, Diederik P. and Ba, Jimmy},
+  title   = {Adam: A Method for Stochastic Optimization},
+  journal = {Proceedings of the International Conference on Learning
+             Representations (ICLR)},
+  year    = {2015},
+  url     = {https://arxiv.org/abs/1412.6980}
+}
+
+% ── Explainability ────────────────────────────────────────────────────────────
+
+@inproceedings{selvaraju2017gradcam,
+  author    = {Selvaraju, Ramprasaath R. and Cogswell, Michael
+               and Das, Abhishek and Vedantam, Ramakrishna
+               and Parikh, Devi and Batra, Dhruv},
+  title     = {{Grad-CAM}: Visual Explanations from Deep Networks via
+               Gradient-based Localization},
+  booktitle = {Proceedings of the IEEE International Conference on
+               Computer Vision (ICCV)},
+  pages     = {618--626},
+  year      = {2017},
+  doi       = {10.1109/ICCV.2017.74}
+}
+
+@inproceedings{zhou2016cam,
+  author    = {Zhou, Bolei and Khosla, Aditya and Lapedriza, Agata
+               and Oliva, Aude and Torralba, Antonio},
+  title     = {Learning Deep Features for Discriminative Localization},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision
+               and Pattern Recognition (CVPR)},
+  pages     = {2921--2929},
+  year      = {2016},
+  doi       = {10.1109/CVPR.2016.319}
+}
+
+% ── GAN architectures ────────────────────────────────────────────────────────
+
+@inproceedings{karras2020stylegan2,
+  author    = {Karras, Tero and Laine, Samuli and Aittala, Miika
+               and Hellsten, Janne and Lehtinen, Jaakko and Aila, Timo},
+  title     = {Analyzing and Improving the Image Quality of {StyleGAN}},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision
+               and Pattern Recognition (CVPR)},
+  pages     = {8110--8119},
+  year      = {2020},
+  doi       = {10.1109/CVPR42600.2020.00813}
+}
+
+% ── Deepfake detection ────────────────────────────────────────────────────────
+
+@inproceedings{rossler2019faceforensics,
+  author    = {R\"{o}ssler, Andreas and Cozzolino, Davide
+               and Verdoliva, Luisa and Riess, Christian
+               and Thies, Justus and Nie{\ss}ner, Matthias},
+  title     = {{FaceForensics++}: Learning to Detect Manipulated Facial Images},
+  booktitle = {Proceedings of the IEEE International Conference on
+               Computer Vision (ICCV)},
+  pages     = {1--11},
+  year      = {2019},
+  doi       = {10.1109/ICCV.2019.00009}
+}
+
+% ── Frequency-domain analysis of GANs ────────────────────────────────────────
+
+@article{frank2020frequency,
+  author  = {Frank, Joel and Eisenhofer, Thorsten and Sch\"{o}nherr, Lea
+             and Fischer, Asja and Kolossa, Dorothea and Holz, Thorsten},
+  title   = {Leveraging Frequency Analysis for Deep Fake Image Recognition},
+  journal = {Proceedings of the International Conference on Machine
+             Learning (ICML)},
+  year    = {2020},
+  volume  = {119},
+  pages   = {3247--3258},
+  url     = {https://arxiv.org/abs/2003.08685}
+}
+
+@article{dzanic2020fourier,
+  author  = {Dzanic, Tarik and Shah, Karan and Witherden, Freddie D.},
+  title   = {Fourier Spectrum Discrepancies in Deep Network Generated Images},
+  journal = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume  = {33},
+  pages   = {3022--3032},
+  year    = {2020},
+  url     = {https://arxiv.org/abs/1911.06465}
+}
+
+@inproceedings{durall2019unmasking,
+  author    = {Durall, Ricard and Keuper, Margret and Pfreundt, Franz-Josef
+               and Keuper, Janis},
+  title     = {Unmasking {DeepFakes} with Simple Features},
+  booktitle = {arXiv preprint arXiv:1911.00686},
+  year      = {2019},
+  url       = {https://arxiv.org/abs/1911.00686}
+}
+
+% ── Dataset ──────────────────────────────────────────────────────────────────
+
+@misc{dataset140k,
+  author       = {Xhlulu},
+  title        = {140{K} Real and Fake Faces},
+  year         = {2020},
+  publisher    = {Kaggle},
+  howpublished = {\url{https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces}},
+  note         = {Accessed May 2026.  Contains 70,000 FFHQ/Flickr real faces
+                  and 70,000 StyleGAN2-generated synthetic faces.}
+}

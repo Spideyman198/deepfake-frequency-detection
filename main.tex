@@ -1,0 +1,62 @@
+% CVPR 2025 Paper Template — Project Report
+% Deepfake Image Detection Using Frequency-Domain Analysis and Explainable AI
+% Bahcesehir University — AI Engineering — 2026
+% Author: Kenan Eliyan
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+%%%%%%%%% PAPER TYPE
+% \usepackage{cvpr}              % Camera-ready version
+\usepackage[review]{cvpr}      % Review version (ruler + page numbers)
+% \usepackage[pagenumbers]{cvpr} % Force page numbers
+
+% Import additional packages in the preamble file, before hyperref
+\input{preamble}
+
+% hyperref — keep enabled; delete *.aux if you toggle it
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+
+% cleveref must come AFTER hyperref
+\usepackage[capitalise,noabbrev]{cleveref}
+
+%%%%%%%%% PAPER ID
+\def\paperID{AIN3002}
+\def\confName{CVPR}
+\def\confYear{2025}
+
+%%%%%%%%% TITLE
+\title{Deepfake Image Detection Using\\
+       Frequency-Domain Analysis and Explainable AI}
+
+%%%%%%%%% AUTHOR
+\author{Kenan Eliyan\\
+Bahcesehir University\\
+AI Engineering, Istanbul, Turkey\\
+{\tt\small kenan.eliyan@std.bau.edu.tr}
+}
+
+\begin{document}
+\maketitle
+
+% ── Section files ────────────────────────────────────────────────────────────
+\input{sec/0_abstract}
+\input{sec/1_intro}
+\input{sec/2_relatedwork}
+\input{sec/3_dataset}
+\input{sec/4_method}
+\input{sec/5_experiments}
+\input{sec/6_gradcam}
+\input{sec/7_conclusion}
+
+% ── Bibliography ─────────────────────────────────────────────────────────────
+{
+    \small
+    \bibliographystyle{ieeenat_fullname}
+    \bibliography{main}
+}
+
+% Supplementary (not included in submission):
+% \input{sec/X_suppl}
+
+\end{document}
