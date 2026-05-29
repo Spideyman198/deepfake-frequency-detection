@@ -20,6 +20,18 @@ augmented with **Grad-CAM** explainability to visualise model decisions.
 
 ---
 
+## Project Poster
+
+<p align="center">
+  <img src="poster/poster_preview.png" alt="Project Poster Preview" width="900"/>
+</p>
+
+<p align="center">
+  📄 <a href="poster/poster.pdf"><strong>Download Full Poster (PDF)</strong></a>
+</p>
+
+---
+
 ## Table of Contents
 
 1. [Overview](#overview)
