@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/Dataset-Kaggle-20BEFF?logo=kaggle" alt="Kaggle">
 </p>
 
-> **University Final Project — Bahcesehir University, Computer Engineering, 2025**  
+> **University Final Project — Bahcesehir University, Artificial Intelligence Engineering, 2026**  
 > Author: **Kenan Eliyan**
 
 A PyTorch deep-learning project that compares three deepfake-detection strategies:
