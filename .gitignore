@@ -1,0 +1,57 @@
+# ── Dataset ───────────────────────────────────────────────────────────────────
+# 30 000 images, ~820 MB — download from Kaggle instead.
+# See README.md › "Getting the Data" for instructions.
+data/
+datasets/
+
+# ── Trained model weights ─────────────────────────────────────────────────────
+# Weights are large binaries; only the training history JSONs are tracked.
+results/models/*.pth
+results/models/*.pt
+results/models/*.ckpt
+*.pth
+*.pt
+*.ckpt
+
+# ── Python cache ──────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# ── Environment & secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+.envrc
+
+# ── OS / editor clutter ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+
+# ── Package build artefacts ───────────────────────────────────────────────────
+*.egg-info/
+dist/
+build/
+
+# ── Poster (generated HTML — not for version control) ─────────────────────────
+poster/poster.html
+
+# ── IDE & tool-specific ───────────────────────────────────────────────────────
+.claude/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── Pytest / coverage ─────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
