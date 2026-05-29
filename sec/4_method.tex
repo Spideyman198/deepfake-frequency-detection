@@ -60,7 +60,7 @@ Same head: $\text{Dropout}(0.3) \to \text{Linear}(512, 2)$.
 
 \paragraph{Hybrid model.}
 Two independent ResNet18 branches (RGB: ImageNet-pretrained; FFT: random
-init) extract 512-d feature vectors each.
+init) extract 512-d feature vectors each (see \cref{fig:arch}).
 The vectors are concatenated to a 1{,}024-d fused representation:
 \begin{equation}
   \mathbf{z} =
@@ -72,6 +72,73 @@ The vectors are concatenated to a 1{,}024-d fused representation:
 The classification head is:
 $\text{Dropout}(0.4) \to \text{FC}(1024,256) \to \text{ReLU}
  \to \text{Dropout}(0.3) \to \text{FC}(256,2)$.
+
+\begin{figure*}[t]
+  \centering
+  \resizebox{0.9\textwidth}{!}{%
+  \begin{tikzpicture}[
+      every node/.style = {font=\small\sffamily},
+      box/.style = {draw, rounded corners=3pt, minimum height=0.75cm,
+                    minimum width=2.4cm, align=center, inner sep=3pt},
+      arr/.style = {->, >=Stealth, thick},
+    ]
+
+    %% ─── RGB branch (top) ─────────────────────────────────────────
+    \node[box, fill=blue!10]   (rgb_in)  at (0,    1.2) {RGB Image};
+    \node[box, fill=blue!20]   (rgb_net) at (3.2,  1.2)
+        {ResNet18\\{\scriptsize (ImageNet)}};
+    \node[box, fill=yellow!25] (rgb_f)   at (6.2,  1.2)
+        {$f_{\mathrm{RGB}}$, 512-d};
+
+    %% ─── FFT branch (bottom) ──────────────────────────────────────
+    \node[box, fill=orange!10]  (fft_in)  at (0,   -1.2) {FFT Spectrum};
+    \node[box, fill=orange!20]  (fft_net) at (3.2, -1.2)
+        {ResNet18\\{\scriptsize (rand.\ init)}};
+    \node[box, fill=yellow!25]  (fft_f)   at (6.2, -1.2)
+        {$f_{\mathrm{FFT}}$, 512-d};
+
+    %% ─── Concatenation ────────────────────────────────────────────
+    \node[box, fill=teal!25, minimum height=2.8cm, minimum width=2.0cm]
+        (cat) at (9.0, 0) {Concat\\1024-d};
+
+    %% ─── Classifier head ──────────────────────────────────────────
+    \node[box, fill=violet!15] (fc1) at (11.8, 0)
+        {FC(1024,256)\\+ReLU};
+    \node[box, fill=violet!15] (fc2) at (14.6, 0)
+        {Dropout\\+FC(256,2)};
+    \node[box, fill=green!20]  (out) at (17.0, 0)
+        {\textbf{Real/Fake}};
+
+    %% ─── Branch arrows ────────────────────────────────────────────
+    \draw[arr] (rgb_in)  -- (rgb_net);
+    \draw[arr] (rgb_net) -- (rgb_f);
+    \draw[arr] (fft_in)  -- (fft_net);
+    \draw[arr] (fft_net) -- (fft_f);
+
+    %% ─── Elbow arrows into concat (approach from top and bottom) ──
+    \draw[arr] (rgb_f.east) -| (cat.north);
+    \draw[arr] (fft_f.east) -| (cat.south);
+
+    %% ─── Head arrows ──────────────────────────────────────────────
+    \draw[arr] (cat)  -- (fc1);
+    \draw[arr] (fc1)  -- (fc2);
+    \draw[arr] (fc2)  -- (out);
+
+  \end{tikzpicture}%
+  }
+  \caption{%
+    \textbf{Hybrid model architecture.}
+    The RGB branch (top) uses an ImageNet-pretrained ResNet18; the FFT
+    branch (bottom) uses a randomly initialised ResNet18 on
+    log-magnitude frequency spectra.
+    Both branches produce 512-d feature vectors that are concatenated
+    into a 1{,}024-d representation.
+    The shared classification head applies
+    $\text{Dropout}(0.4)\!\to\!\text{FC}(1024,256)\!\to\!\text{ReLU}
+    \!\to\!\text{Dropout}(0.3)\!\to\!\text{FC}(256,2)$.
+  }
+  \label{fig:arch}
+\end{figure*}
 
 \subsection{Training Configuration}
 \label{sec:training}
