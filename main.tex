@@ -17,8 +17,8 @@
 \definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
 \usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
 
-% cleveref must come AFTER hyperref
-\usepackage[capitalise,noabbrev]{cleveref}
+% NOTE: cleveref is loaded automatically by cvpr.sty via \AtEndPreamble
+% with option [capitalize].  Do NOT load it again here.
 
 %%%%%%%%% PAPER ID
 \def\paperID{AIN3002}
