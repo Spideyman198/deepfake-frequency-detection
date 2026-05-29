@@ -28,18 +28,21 @@ cross-hair pattern of elevated energy along the horizontal and vertical
 frequency axes — a direct consequence of periodic transposed-convolution
 upsampling artefacts.
 
-\begin{figure*}[t]
+\begin{figure}[t]
   \centering
-  \includegraphics[width=\textwidth]{results/figures/rgb_vs_fft_comparison.png}
+  \includegraphics[width=0.92\linewidth]{results/figures/rgb_vs_fft_pair.png}
   \caption{%
     \textbf{RGB vs.\ FFT spectrum comparison.}
-    Top row: raw face images (real left, StyleGAN2-generated right).
-    Bottom row: corresponding log-magnitude FFT spectra.
-    GAN-generated faces show bright horizontal/vertical streaks through the
-    DC centre — periodic artefacts from transposed-convolution upsampling.
+    Each row pairs a face image (left) with its log-magnitude FFT spectrum
+    (right): a StyleGAN2-generated \emph{fake} (top) and a \emph{real} face
+    (bottom).
+    Both spectra concentrate energy along the horizontal and vertical
+    frequency axes; this cross-hair pattern — a periodic artefact of
+    transposed-convolution upsampling — is most pronounced in the
+    GAN-generated example.
   }
   \label{fig:fftcompare}
-\end{figure*}
+\end{figure}
 
 \subsection{Model Architectures}
 \label{sec:models}
